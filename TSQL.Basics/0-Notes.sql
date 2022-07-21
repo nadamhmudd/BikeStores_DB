@@ -14,18 +14,6 @@
 /* Example for LIKE with ESCAPE
  - to include % as a string
 */
-CREATE TABLE sales.feedbacks (
-   feedback_id INT IDENTITY(1, 1) PRIMARY KEY, 
-    comment VARCHAR(255) NOT NULL
-)
-;
-
-INSERT INTO sales.feedbacks(comment)
-VALUES('Can you give me 30% discount?'),
-      ('May I get me 30USD off?'),
-      ('Is this having 20% discount today?')
-;
-
 select *
 from sales.feedbacks
 where comment like '%30/%%' ESCAPE '/' -- make / is escape char, can be any another char

@@ -1,20 +1,4 @@
-/*
---------------------------------------------------------------------
-© 2017 sqlservertutorial.net All Rights Reserved
---------------------------------------------------------------------
-Name   : BikeStores
-Link   : http://www.sqlservertutorial.net/load-sample-database/
-Version: 1.0
---------------------------------------------------------------------
-*/
--- create schemas
-CREATE SCHEMA production;
-go
-
-CREATE SCHEMA sales;
-go
-
--- create tables
+C-- create tables
 CREATE TABLE production.categories (
 	category_id INT IDENTITY (1, 1) PRIMARY KEY,
 	category_name VARCHAR (255) NOT NULL
@@ -106,4 +90,37 @@ CREATE TABLE production.stocks (
 	PRIMARY KEY (store_id, product_id),
 	FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (product_id) REFERENCES production.products (product_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- for LIKE with escape example
+CREATE TABLE sales.feedbacks (
+   feedback_id INT IDENTITY(1, 1) PRIMARY KEY, 
+    comment VARCHAR(255) NOT NULL
+)
+;
+
+-- for Join section
+CREATE TABLE hr.candidates(
+	id int PRIMARY KEY IDENTITY,
+	fullname VARCHAR(100) NOT NULL
+)
+;
+
+CREATE TABLE hr.employees(
+	id int PRIMARY KEY IDENTITY,
+	fullname VARCHAR(100) NOT NULL
+)
+;
+
+CREATE TABLE pm.projects(
+    id INT PRIMARY KEY IDENTITY,
+    title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE pm.members(
+    id INT PRIMARY KEY IDENTITY,
+    name VARCHAR(120) NOT NULL,
+    project_id INT,
+    FOREIGN KEY (project_id) 
+        REFERENCES pm.projects(id)
 );
