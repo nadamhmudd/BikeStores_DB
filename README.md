@@ -5,16 +5,14 @@
 ![DB](DbDigram.png)
 
 # TSQL Basics
-###### 1. Querying Data
-- SELECT 
-###### 2. Sorting Data
-- ORDER BY
-###### 3. Limiting Rows
+###### 1. Querying ans Sorting Data
+- SELECT, ORDER BY
+###### 2. Limiting Rows
 - OFFSET FETCH, SELECT TOP 
-######  4. Filtering Data
+###### 3. Filtering Data
 - DISTINCT, WHERE, AND, OR, IN, BETWEEN, LIKE 
-###### 5. Joining Tables
+###### 4. Joining Tables
 - INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, CROSS JOIN, SELF JOIN
-###### 6. Grouping Data
+###### 5. Grouping Data
 - GROUP BY and HAVING, GROUPING SETS and GROUPING Function
 - CUBE, ROLLUP
